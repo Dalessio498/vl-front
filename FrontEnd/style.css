@@ -26,6 +26,7 @@ body {
     background-image: url(img/vixLegen.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
 }
 
 main {
