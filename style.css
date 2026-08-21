@@ -1,18 +1,8 @@
 :root {
-    --primary-color: #6e0e10;
-    --primary-hover: #5c0d0e;
-    --sidebar-bg: #8f3540;
-    --input-bg-focus: #fff8f8;
-    --placeholder-color: #737373a6;
+    --primary-color: #722f37;
+    --sidebar-bg: #722f37;
     --white: #ffffff;
     --font-primary: 'Cormorant Garamond', serif;
-    --font-secondary: sans-serif;
-    --radius-sm: 10px;
-    --radius-md: 30px;
-    --radius-lg: 40px;
-    --radius-xl: 50px;
-    --radius-xxl: 70px;
-    --transition-fast: all 0.2s ease-in-out;
 }
 
 * {
@@ -23,75 +13,62 @@
 }
 
 body {
-    background-image: url(img/vixLegen.png);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    background-color: #f7f5f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 main {
     display: flex;
-    min-height: 100vh;
     width: 100%;
+    min-height: 100vh;
 }
 
+/* Sidebar expandida */
 .side-bar-father {
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    width: 130px;
+    background-color: var(--sidebar-bg);
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+    padding: 45px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 10%;
-    min-width: 120px;
-    height: 100vh;
-    padding: 40px 0;
-    background-color: var(--sidebar-bg);
-    border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
 }
 
 .side-bar-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
     height: 100%;
+    align-items: center;
 }
 
 .buttons-up-father {
     display: flex;
     flex-direction: column;
+    gap: 35px;
     align-items: center;
-    width: 100%;
-    gap: 20px;
-}
-
-.buttons-up-father a {
-    display: flex;
-    justify-content: center;
-    width: 100%;
 }
 
 .buttons-up-father img {
-    width: 60px;
-}
-
-.logo-father {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    width: 45px;
+    filter: brightness(0) invert(1);
 }
 
 .logo-father img {
-    width: 80px;
+    width: 55px;
 }
 
+/* Área Central */
 .right-side-main {
-    position: relative;
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 40px;
 }
 
 .right-side {
@@ -99,75 +76,115 @@ main {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    max-width: 620px; /* Ampliado para dar mais espaço interno */
 }
 
+/* Bloco do Topo (Olá, Rodrigo) */
 .h1-box {
-    width: fit-content;
-    margin: 40px 0;
-    padding: 10px 40px;
     background-color: var(--primary-color);
-    border-radius: var(--radius-lg);
-    font-size: 8px;
+    width: 100%;
+    border-radius: 30px;
+    padding: 25px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
     color: var(--white);
+    margin-bottom: 25px;
 }
 
+.user-avatar-circle {
+    border: 3px solid #fff;
+    border-radius: 50%;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-avatar-circle img {
+    width: 32px;
+    filter: brightness(0) invert(1);
+}
+
+.h1-box h1 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+/* Card Container Maior */
 .form-box-father {
-    width: fit-content;
-    margin-bottom: 30px;
-    padding: 10px 60px;
+    width: 100%;
     border: 2px solid var(--primary-color);
-    border-radius: var(--radius-xxl);
-}
-
-.inputs h2 {
-    margin: 20px 0;
-    text-align: center;
-    font-weight: bold;
-}
-
-.input {
+    border-radius: 40px;
+    padding: 35px 45px;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
-    width: 300px;
-    margin: 30px 10px;
+    align-items: center;
 }
 
-.input label {
-    margin-bottom: 10px;
-    color: var(--primary-color);
-    font-size: 22px;
-    font-weight: 700;
+/* Botões do Topo Aumentados */
+.nav-buttons-top {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 18px;
 }
 
-.input input {
-    padding: 8px;
-    border: 2px solid var(--primary-color);
-    border-radius: var(--radius-md);
-    transition: var(--transition-fast);
-}
-
-.input input:focus {
-    outline: none;
-    border-color: var(--primary-hover);
-    background-color: var(--input-bg-focus);
-    transform: scale(1.05);
-}
-
-.input input::placeholder {
-    color: var(--placeholder-color);
-    font-family: var(--font-secondary);
-    font-size: 14px;
-}
-
-.button-form {
-    display: block;
-    width: 70%;
-    margin: 0 auto;
-    padding: 10px 20px;
+.btn-action {
     background-color: var(--primary-color);
-    border: none;
-    border-radius: var(--radius-md);
     color: var(--white);
-    font-size: 20px;
+    border: none;
+    border-radius: 16px;
+    padding: 12px 28px;
+    font-size: 19px;
+    font-weight: 700;
     cursor: pointer;
+}
+
+.btn-edit {
+    padding: 12px 36px;
+    margin-bottom: 25px;
+}
+
+/* Título e Textos Aumentados */
+.info-title {
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 30px;
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group label {
+    color: var(--primary-color);
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.custom-input {
+    width: 100%;
+    border: 2px solid var(--primary-color);
+    border-radius: 28px;
+    padding: 12px 18px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
 }
